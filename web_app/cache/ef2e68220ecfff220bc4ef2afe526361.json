@@ -1,0 +1,70 @@
+{
+  "key": "api.get_object_detail:{'object_id': 'ananke'}:[]",
+  "value": {
+    "data": {
+      "absolute_magnitude_H": null,
+      "albedo": null,
+      "alternative_names": "['Anank\u00e9', 'Ananke']",
+      "anomaly_type": null,
+      "aphelion_distance_au": null,
+      "aphelion_km": 0.0,
+      "argument_periapsis_deg": null,
+      "avg_temperature_k": 0.0,
+      "classification": {
+        "is_anomaly": false,
+        "is_neo": false,
+        "is_pha": false,
+        "primary_type": "Lunas"
+      },
+      "clustering_enabled": false,
+      "data_quality": "Primary",
+      "data_source": "OpenData",
+      "density_g_cm3": 1.0,
+      "diameter_km": null,
+      "discovered_by": "Seth Barnes Nicholson",
+      "discovery": {
+        "date": "28/09/1951",
+        "discoverer": "Seth Barnes Nicholson"
+      },
+      "discovery_date": "28/09/1951",
+      "display_name": "Ananke",
+      "eccentricity": 0.244,
+      "escape_velocity_km_s": 0.0,
+      "gravity_m_s2": 0.01,
+      "has_image": false,
+      "has_orbital_data": null,
+      "id": "ananke",
+      "image": {
+        "is_local": false,
+        "source": "placeholder",
+        "title": "No image available for Ananke",
+        "url": "/static/images/placeholder_moon.svg"
+      },
+      "inclination_deg": 148.9,
+      "is_anomaly": false,
+      "is_neo": false,
+      "is_pha": false,
+      "is_planet": false,
+      "last_updated": "2025-08-04T16:11:00.706621",
+      "longitude_ascending_node_deg": null,
+      "mass_kg": 0.0,
+      "mean_anomaly_deg": null,
+      "mean_radius_km": 10.0,
+      "name": "Ananke",
+      "object_type": "Moon",
+      "orbital_data": null,
+      "orbital_period_days": null,
+      "perihelion_distance_au": null,
+      "perihelion_km": 0.0,
+      "rotation_period_h": null,
+      "sbdb_class": null,
+      "search_keywords": "pha,potentially hazardous,near earth,ananke,anank\u00e9,neo,moon",
+      "semimajor_axis_au": null,
+      "semimajor_axis_km": 21276000.0,
+      "ui_category": "Lunas"
+    },
+    "success": true
+  },
+  "created_at": "2025-08-04T17:29:54.668352",
+  "expires_at": "2025-08-04T18:29:54.668357"
+}

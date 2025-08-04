@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}Análisis de Anomalías - Sistema Solar Explorer{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/anomalies.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-4">
+                <i class="bi bi-exclamation-diamond text-warning"></i> 
+                Análisis de Anomalías
+            </h1>
+            <p class="lead">
+                Objetos del sistema solar con características inusuales detectadas mediante técnicas de minería de datos
+            </p>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row mb-4" id="anomalyStats">
+        <div class="col-md-3 mb-3">
+            <div class="card text-center border-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Total Anomalías</h5>
+                    <p class="card-text fs-2 text-warning" id="totalAnomalies">-</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Outliers DBSCAN</h5>
+                    <p class="card-text fs-3" id="dbscanCount">-</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Alta Excentricidad</h5>
+                    <p class="card-text fs-3" id="eccentricityCount">-</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Alta Inclinación</h5>
+                    <p class="card-text fs-3" id="inclinationCount">-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters and Controls -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-funnel"></i> Filtros</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Tipo de Anomalía</label>
+                            <select class="form-select" id="anomalyTypeFilter">
+                                <option value="">Todos los tipos</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Ordenar por</label>
+                            <select class="form-select" id="sortBy">
+                                <option value="name">Nombre</option>
+                                <option value="eccentricity">Excentricidad</option>
+                                <option value="inclination_deg">Inclinación</option>
+                                <option value="diameter_km">Tamaño</option>
+                                <option value="rarity_score">Puntuación de Rareza</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> Explicación de Anomalías</h5>
+                </div>
+                <div class="card-body" id="anomalyExplanations">
+                    <p class="text-muted">Cargando explicaciones...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anomalies List -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-list-ul"></i> 
+                        Lista de Objetos Anómalos
+                        <span class="badge bg-secondary ms-2" id="resultCount">0</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div id="anomaliesContainer">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Cargando anomalías...</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Paginación de anomalías" class="mt-4">
+                        <ul class="pagination justify-content-center" id="anomaliesPagination">
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visualization Modal -->
+    <div class="modal fade" id="anomalyDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="anomalyModalTitle">Detalles de Anomalía</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="anomalyModalBody">
+                    <!-- Details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/anomalies.js') }}"></script>
+{% endblock %}

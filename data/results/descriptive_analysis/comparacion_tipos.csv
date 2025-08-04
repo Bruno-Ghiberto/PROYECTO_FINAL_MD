@@ -1,0 +1,9 @@
+,meanRadius,meanRadius,meanRadius,meanRadius,mass_kg,mass_kg,mass_kg,mass_kg,density,density,density,density
+,count,mean,median,std,count,mean,median,std,count,mean,median,std
+bodyType,,,,,,,,,,,,
+Asteroid,44,129.0841,63.85,176.405,44,0.0,0.0,0.0,44,1.0264,1.0,0.175
+Comet,4,5.1,2.7,6.8323,4,0.0,0.0,0.0,4,0.75,1.0,0.5
+Dwarf Planet,4,769.075,944.0,555.0812,4,0.0,0.0,0.0,4,2.1025,2.205,0.5658
+Moon,305,93.0544,2.0,351.7912,305,0.0,0.0,0.0,305,0.7225,1.0,0.5911
+Planet,8,24547.3386,15496.5042,26191.7829,8,0.0,0.0,0.0,8,3.1301,2.786,2.1039
+Star,1,695508.0,695508.0,,1,0.0,0.0,,1,1.0,1.0,

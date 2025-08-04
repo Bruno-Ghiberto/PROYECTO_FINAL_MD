@@ -1,0 +1,21 @@
+{
+  "extraction_date": "2025-08-01T15:00:16.978473",
+  "strategy": "BATCH_PROCESSING",
+  "results": {
+    "opendata": {
+      "status": "success",
+      "files": [
+        "all_bodies",
+        "planets",
+        "moons",
+        "metadata"
+      ],
+      "action": "downloaded"
+    },
+    "sbdb": {
+      "status": "success",
+      "files": 0,
+      "action": "downloaded"
+    }
+  }
+}

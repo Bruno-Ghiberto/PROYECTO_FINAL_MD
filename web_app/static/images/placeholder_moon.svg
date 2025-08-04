@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="moonBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGradient">
+      <stop offset="0%" style="stop-color:#e2e8f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#94a3b8;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <rect width="400" height="400" fill="url(#moonBg)"/>
+  
+  <!-- Stars -->
+  <circle cx="50" cy="50" r="1" fill="white" opacity="0.7"/>
+  <circle cx="320" cy="80" r="1.5" fill="white" opacity="0.8"/>
+  <circle cx="100" cy="320" r="1" fill="white" opacity="0.6"/>
+  <circle cx="350" cy="350" r="1" fill="white" opacity="0.7"/>
+  
+  <!-- Moon -->
+  <circle cx="200" cy="200" r="70" fill="url(#moonGradient)"/>
+  
+  <!-- Craters -->
+  <circle cx="180" cy="180" r="12" fill="#64748b" opacity="0.7"/>
+  <circle cx="210" cy="170" r="8" fill="#64748b" opacity="0.6"/>
+  <circle cx="220" cy="210" r="15" fill="#64748b" opacity="0.8"/>
+  <circle cx="185" cy="220" r="6" fill="#64748b" opacity="0.5"/>
+  <circle cx="200" cy="195" r="5" fill="#64748b" opacity="0.4"/>
+  
+  <!-- Shadow for 3D effect -->
+  <path d="M 145 255 A 70 70 0 0 0 255 255 A 50 50 0 0 1 145 255" fill="black" opacity="0.3"/>
+  
+  <!-- Text -->
+  <text x="200" y="350" font-family="Arial, sans-serif" font-size="16" fill="#a0aec0" text-anchor="middle">Luna</text>
+</svg>

@@ -1,0 +1,29 @@
+{
+  "key": "api.get_stats:{}:[]",
+  "value": {
+    "data": {
+      "anomalies_detected": 1116,
+      "by_category": {
+        "Asteroides": 8044,
+        "Asteroides Peligrosos": 3000,
+        "Asteroides Troyanos": 3000,
+        "Centauros": 948,
+        "Cometas": 130,
+        "Lunas": 305,
+        "Objetos Cercanos": 5000,
+        "Otros Objetos": 5,
+        "Planetas": 8
+      },
+      "data_sources": {
+        "OpenData": 366,
+        "SBDB": 20074
+      },
+      "has_clustering": 0,
+      "last_updated": "2025-08-04T16:11:05.221073",
+      "total_objects": 20440
+    },
+    "success": true
+  },
+  "created_at": "2025-08-04T17:13:38.743777",
+  "expires_at": "2025-08-04T18:13:38.743782"
+}

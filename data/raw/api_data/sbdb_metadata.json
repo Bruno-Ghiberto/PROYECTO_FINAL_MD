@@ -1,0 +1,25 @@
+{
+  "download_date": "2025-08-01T15:01:58.592015",
+  "api_source": "https://ssd-api.jpl.nasa.gov/sbdb_query.api",
+  "files_generated": [
+    "neos",
+    "mba",
+    "trojans",
+    "comets_jfc",
+    "comets_htc",
+    "phas",
+    "centaurs"
+  ],
+  "total_records": 20074,
+  "object_types": {
+    "neos": "Near-Earth Objects (análisis de riesgo)",
+    "mba": "Main Belt Asteroids (clustering)",
+    "trojans": "Jupiter Trojans",
+    "comets_jfc": "Jupiter Family Comets",
+    "comets_htc": "Halley-Type Comets",
+    "phas": "Potentially Hazardous Asteroids",
+    "centaurs": "Centaurs (Jupiter-Neptune region)"
+  },
+  "purpose": "Datos para análisis de clustering y clasificación",
+  "next_update_recommended": "2025-08-16T15:01:58.592026"
+}

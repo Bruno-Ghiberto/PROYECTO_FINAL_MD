@@ -1,0 +1,21 @@
+{
+  "total_objects": 20440,
+  "by_category": {
+    "Asteroides": 8044,
+    "Objetos Cercanos": 5000,
+    "Asteroides Troyanos": 3000,
+    "Asteroides Peligrosos": 3000,
+    "Centauros": 948,
+    "Lunas": 305,
+    "Cometas": 130,
+    "Planetas": 8,
+    "Otros Objetos": 5
+  },
+  "data_sources": {
+    "SBDB": 20074,
+    "OpenData": 366
+  },
+  "has_clustering": 0,
+  "anomalies_detected": 1116,
+  "last_updated": "2025-08-04T16:11:05.221073"
+}

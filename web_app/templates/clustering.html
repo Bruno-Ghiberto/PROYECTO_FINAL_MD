@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% block title %}Análisis de Clustering - Sistema Solar Explorer{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/clustering.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-4">
+                <i class="bi bi-diagram-3 text-success"></i> 
+                Análisis de Clustering
+            </h1>
+            <p class="lead">
+                Agrupación de objetos del sistema solar basada en características físicas y orbitales usando K-Means y PCA
+            </p>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row mb-4" id="clusterStats">
+        <div class="col-md-3 mb-3">
+            <div class="card text-center border-success">
+                <div class="card-body">
+                    <h5 class="card-title">Total Objetos</h5>
+                    <p class="card-text fs-2 text-success" id="totalObjects">-</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Clusters</h5>
+                    <p class="card-text fs-3" id="numClusters">-</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Outliers</h5>
+                    <p class="card-text fs-3" id="outlierCount">-</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Componentes PCA</h5>
+                    <p class="card-text fs-3">2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Visualization -->
+    <div class="row mb-4">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-scatter"></i> Visualización de Clusters (PCA 2D)
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div id="clusteringPlot" style="height: 600px;">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Cargando visualización...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <i class="bi bi-info-circle"></i> 
+                        Haz clic en los puntos para ver detalles del objeto. 
+                        Los colores representan diferentes clusters.
+                    </small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <!-- Cluster Details -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-list-ul"></i> Detalles de Clusters
+                    </h5>
+                </div>
+                <div class="card-body" id="clusterDetails">
+                    <p class="text-muted">Cargando información de clusters...</p>
+                </div>
+            </div>
+            
+            <!-- PCA Information -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-graph-up-arrow"></i> Componentes PCA
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <h6>Componente 1 (Eje X)</h6>
+                    <p class="small text-muted" id="pca1Info">
+                        Varianza principal - típicamente relacionada con tamaño y distancia orbital
+                    </p>
+                    
+                    <h6>Componente 2 (Eje Y)</h6>
+                    <p class="small text-muted" id="pca2Info">
+                        Varianza secundaria - típicamente relacionada con excentricidad e inclinación orbital
+                    </p>
+                    
+                    <div class="alert alert-info mt-3">
+                        <small>
+                            <strong>¿Qué es PCA?</strong><br>
+                            El Análisis de Componentes Principales (PCA) reduce la dimensionalidad 
+                            de los datos manteniendo la mayor varianza posible, permitiendo 
+                            visualizar patrones complejos en 2D.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Objects by Cluster -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-collection"></i> 
+                        Objetos por Cluster
+                        <button class="btn btn-sm btn-outline-secondary float-end" onclick="exportClustering()">
+                            <i class="bi bi-download"></i> Exportar
+                        </button>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <ul class="nav nav-tabs" id="clusterTabs" role="tablist">
+                        <!-- Tabs will be generated dynamically -->
+                    </ul>
+                    <div class="tab-content mt-3" id="clusterTabContent">
+                        <!-- Tab content will be generated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Object Detail Modal -->
+    <div class="modal fade" id="objectDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="objectModalTitle">Detalles del Objeto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="objectModalBody">
+                    <!-- Details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/clustering.js') }}"></script>
+{% endblock %}

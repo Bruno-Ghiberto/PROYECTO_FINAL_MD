@@ -1,0 +1,11 @@
+{
+  "download_date": "2025-08-01T15:00:11.443941",
+  "api_source": "https://api.le-systeme-solaire.net",
+  "files_generated": [
+    "all_bodies",
+    "planets",
+    "moons"
+  ],
+  "total_records": 740,
+  "next_update_recommended": "2025-08-08T15:00:11.443970"
+}

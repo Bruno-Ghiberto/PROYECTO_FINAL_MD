@@ -1,0 +1,60 @@
+/* Anomalies page specific styles */
+
+.anomaly-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.anomaly-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(255, 193, 7, 0.3);
+}
+
+.anomaly-card .card-header {
+    border-bottom: 2px solid #ffc107;
+}
+
+.anomaly-card .badge {
+    font-size: 0.75rem;
+}
+
+/* Progress bar for rarity score */
+.progress {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    transition: width 0.6s ease;
+}
+
+/* Statistics cards */
+.card.border-warning {
+    border-width: 2px;
+}
+
+/* Modal styles */
+#anomalyDetailModal .modal-content {
+    border-top: 3px solid #ffc107;
+}
+
+/* Anomaly type badges */
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+/* Filter section */
+#anomalyExplanations .alert {
+    border-left: 4px solid #0dcaf0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .anomaly-card {
+        margin-bottom: 1rem;
+    }
+    
+    .statistics-card {
+        margin-bottom: 1rem;
+    }
+}

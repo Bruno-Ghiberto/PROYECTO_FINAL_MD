@@ -1,0 +1,3 @@
+cluster_id,count,avg_semimajor_axis,avg_eccentricity,avg_inclination,avg_period,dominant_category,astronomical_classification,category_distribution
+0,19466,3.183810452484632,0.14086045930035512,8.832690531865145,2174.5474724405017,main_belt,Asteroides del Cinturón Principal,"{'main_belt': 8000, 'neos': 4999, 'trojans': 3000, 'phas': 2999, 'centaurs': 468}"
+1,476,19.557166707334567,0.5121440646782204,39.23294039056977,32646.78954044548,centaurs,Centauros,"{'centaurs': 474, 'neos': 1, 'phas': 1}"

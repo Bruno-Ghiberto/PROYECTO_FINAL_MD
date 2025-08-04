@@ -1,0 +1,48 @@
+=== REPORTE DE ANÁLISIS DESCRIPTIVO ===
+
+Total de registros analizados: 20440
+Cuerpos OpenData: 366
+Categorías SBDB: 7
+
+ESTADÍSTICAS POR TIPO DE CUERPO:
+             meanRadius                                                           mass_kg                   ... gravity                       avgTemp                                    
+                  count         mean       median         std       min       max   count mean median  std  ...  median     std    min    max   count      mean median       std min  max
+bodyType                                                                                                    ...                                                                          
+Asteroid             44     129.0841      63.8500    176.4050       0.0     675.0      44  0.0    0.0  0.0  ...   0.000  0.0422  0.000   0.28      44    3.8182    0.0   25.3270   0  168
+Comet                 4       5.1000       2.7000      6.8323       0.0      15.0       4  0.0    0.0  0.0  ...   0.000  0.0000  0.000   0.00       4    0.0000    0.0    0.0000   0    0
+Dwarf Planet          4     769.0750     944.0000    555.0812       0.0    1188.3       4  0.0    0.0  0.0  ...   0.560  0.1803  0.401   0.82       4   42.0000   43.0    7.4833  32   50
+Moon                305      93.0544       2.0000    351.7912       0.0    2631.2     305  0.0    0.0  0.0  ...   0.000  0.1944  0.000   1.79     305    0.0000    0.0    0.0000   0    0
+Planet                8   24547.3386   15496.5042  26191.7829    2439.4   69911.0       8  0.0    0.0  0.0  ...   9.335  6.5671  3.700  24.79       8  263.1250  187.5  228.0090  55  737
+Star                  1  695508.0000  695508.0000         NaN  695508.0  695508.0       1  0.0    0.0  NaN  ...   0.000     NaN  0.000   0.00       1    0.0000    0.0       NaN   0    0
+
+[6 rows x 30 columns]
+
+CORRELACIONES SIGNIFICATIVAS (>0.5):
+  semimajorAxis - aphelion: 0.966
+  density - avgTemp: 0.583
+  gravity - escape: 0.961
+  gravity - avgTemp: 0.558
+  gravity - mainAnomaly: 0.549
+  gravity - argPeriapsis: 0.675
+  gravity - longAscNode: 0.676
+  gravity - moon_count: 0.716
+  escape - mainAnomaly: 0.503
+  escape - argPeriapsis: 0.695
+  escape - longAscNode: 0.669
+  escape - moon_count: 0.853
+  axialTilt - avgTemp: 0.678
+  axialTilt - longAscNode: 0.563
+  avgTemp - longAscNode: 0.535
+  mainAnomaly - argPeriapsis: 0.736
+  mainAnomaly - longAscNode: 0.723
+  argPeriapsis - longAscNode: 0.885
+  argPeriapsis - moon_count: 0.637
+  longAscNode - moon_count: 0.555
+
+Archivos generados:
+- estadisticas_por_tipo.csv
+- matriz_correlaciones.csv
+- comparacion_tipos.csv
+- visualizations/correlacion_heatmap.png
+- visualizations/distribuciones_parametros.png
+- visualizations/comparacion_tipos.png

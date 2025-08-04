@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="asteroidGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="400" fill="url(#asteroidGradient)"/>
+  
+  <!-- Stars -->
+  <circle cx="50" cy="50" r="1" fill="white" opacity="0.6"/>
+  <circle cx="150" cy="80" r="1" fill="white" opacity="0.7"/>
+  <circle cx="250" cy="60" r="1" fill="white" opacity="0.5"/>
+  <circle cx="320" cy="100" r="1" fill="white" opacity="0.6"/>
+  <circle cx="80" cy="320" r="1" fill="white" opacity="0.7"/>
+  <circle cx="350" cy="350" r="1" fill="white" opacity="0.5"/>
+  
+  <!-- Asteroid shape -->
+  <g transform="translate(200,200)">
+    <polygon points="-60,-40 -40,-60 20,-65 60,-30 65,10 50,50 20,60 -30,55 -65,20 -70,-20" 
+             fill="#4a5568" 
+             stroke="#718096" 
+             stroke-width="2"/>
+    <!-- Craters -->
+    <circle cx="-20" cy="-20" r="12" fill="#2d3748" opacity="0.7"/>
+    <circle cx="25" cy="15" r="8" fill="#2d3748" opacity="0.6"/>
+    <circle cx="-35" cy="25" r="6" fill="#2d3748" opacity="0.5"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="200" y="350" font-family="Arial, sans-serif" font-size="16" fill="#a0aec0" text-anchor="middle">Asteroide</text>
+</svg>

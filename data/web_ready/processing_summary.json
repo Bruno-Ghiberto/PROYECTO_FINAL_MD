@@ -1,0 +1,27 @@
+{
+  "processing_date": "2025-08-04T16:11:00.477946",
+  "sources_processed": [
+    "opendata_all_bodies",
+    "opendata_planets",
+    "opendata_moons",
+    "sbdb_neos",
+    "sbdb_main_belt",
+    "sbdb_trojans",
+    "sbdb_comets_jfc",
+    "sbdb_comets_htc",
+    "sbdb_phas",
+    "sbdb_centaurs",
+    "wikipedia_objects",
+    "johnstons_data"
+  ],
+  "duplicates_removed": 932,
+  "records_unified": 20442,
+  "tables_created": [
+    "main_objects",
+    "anomaly_objects",
+    "dashboard_stats",
+    "comparison_objects",
+    "image_mapping"
+  ],
+  "data_quality_issues": []
+}
